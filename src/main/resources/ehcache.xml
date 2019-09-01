@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+	updateCheck="false">
+	<diskStore path="java.io.tmpdir" />
+	<!--
+        eternal:缓存内容是否永久存储在内存；该值设置为true时，timeToIdleSeconds和timeToLiveSeconds两个属性的值就不起作用了
+        maxElementsInMemory:设置了缓存的上限,最多存储多少个记录对象
+        timeToIdleSeconds:缓存创建以后，最后一次访问缓存的日期至失效之时的时间间隔；默认值是0，也就是可闲置时间无穷大
+        timeToLiveSeconds:缓存自创建日期起至失效时的间隔时间；默认是0.也就是对象存活时间无穷大
+        overflowToDisk:如果内存中的数据超过maxElementsInMemory，是否使用磁盘存储
+        diskPersistent：磁盘存储的条目是否永久保存
+        maxElementsOnDisk：硬盘最大缓存个数
+        memoryStoreEvictionPolicy：默认策略是 LRU（最近最少使用）。你可以设置为FIFO（先进先出）或是LFU（较少使用）
+     
+     -->
+
+	<cache name="usercache" eternal="false" maxElementsInMemory="10000"
+		overflowToDisk="true" diskPersistent="false" maxElementsOnDisk="0" timeToIdleSeconds="0" timeToLiveSeconds="0"
+		 memoryStoreEvictionPolicy="LRU" />
+</ehcache>

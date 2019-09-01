@@ -1,3 +1,10 @@
+spring:
+  application:
+    name: spring-boot-demo
+  cache:
+    type: ehcache
+  profiles:
+    active: self
 server:
   port: 8888
   context-path: /demo
